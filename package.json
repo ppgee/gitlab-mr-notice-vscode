@@ -1,0 +1,70 @@
+{
+    "name": "gitlab-mr-notice-vscode",
+    "displayName": "gitlab-mr-notice-vscode",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "ppgee",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Git Merge Requests Notice",
+            "properties": {
+                "gitMRNotice.gitlabUrl": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "gitlab域名，必填"
+                },
+                "gitMRNotice.privateToken": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "gitlab中个人账号的私有授权，必填"
+                },
+                "gitMRNotice.userName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "gitlab的姓名，必填"
+                },
+                "gitMRNotice.timeout": {
+                    "type": "number",
+                    "default": 60,
+                    "description": "设置检查时间,单位（秒）"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "axios": "^0.18.0"
+    }
+}
