@@ -53,17 +53,11 @@ export class GitLabMR {
       for (const mergeRequest of mergeRequests) {
         const assignee = (mergeRequest as any).assignee
         // assignee is not exists
-        // if (!assignee || assignee.id !== userId) {
-        //   continue
-        // }
-
-        // todo 记得删除
-        if (!assignee) {
+        if (!assignee || assignee.id !== userId) {
           continue
         }
-        assignee.id === 100 && this.mergeRequests.push(mergeRequest)
   
-        // this.mergeRequests.push(mergeRequest)
+        this.mergeRequests.push(mergeRequest)
       }
     }
 
