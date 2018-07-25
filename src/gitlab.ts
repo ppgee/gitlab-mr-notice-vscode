@@ -2,7 +2,6 @@ import CONFIG from './configuration'
 import { AxiosInstance } from './api'
 import { window, commands, Uri } from 'vscode'
 import { isArray } from './utils'
-import { resolve } from 'dns';
 
 export class GitLabMR {
   private gitlabUrl: string
