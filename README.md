@@ -1,65 +1,24 @@
-# gitlab-mr-notice-vscode README
+# gitlab-mr-notice-vscode
 
-This is the README for your extension "gitlab-mr-notice-vscode". After writing up a brief description, we recommend including the following sections.
+这是一个gitlab合并请求的提醒小工具
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* 在vscode配置好自己的gitlab域名、私有授权还有账号姓名，配置成功后将工具将会提示gitlab上指派给当前用户的合并请求数量，省去一部分开发人员之间的尬聊时间
 
-For example if there is an image subfolder under your extension project workspace:
+## Configuration
 
-\!\[feature X\]\(images/feature-x.png\)
+`ctrl/cmd + ,` 或者自设快捷键 打开 settings:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* `gitMRNotice.gitlabUrl`: 使用者的gitlab域名，必设
+* `gitMRNotice.privateToken`: 使用者的私有授权，必设
+* `gitMRNotice.userName`: 使用者在gitlab上的姓名，必设
+* `gitMRNotice.timeout`: 通知时间间隔，选填，默认60秒
 
-## Requirements
+## Issues
+Submit the [issues](https://github.com/ppgee/gitlab-mr-notice-vscode/issues) if you find any bug or have any suggestion.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Contribution
+Fork the [repo](https://github.com/ppgee/gitlab-mr-notice-vscode) and submit pull requests.
 
 **Enjoy!**
