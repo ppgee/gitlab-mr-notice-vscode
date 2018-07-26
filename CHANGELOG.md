@@ -1,7 +1,5 @@
-# Change Log
-All notable changes to the "gitlab-mr-notice-vscode" extension will be documented in this file.
+### 0.0.2 (2018-07-26)
+- Initial release
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
+### 0.0.1 (2018-07-26)
 - Initial release
