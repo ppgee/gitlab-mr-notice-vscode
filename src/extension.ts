@@ -16,7 +16,7 @@ function sleep () {
 }
 
 // main application
-async function main() {
+async function main () {
   try {
     while (1) {
       const gitlabMR = new GitLabMR()
@@ -30,7 +30,7 @@ async function main() {
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate() {
+export function activate () {
 
   // get the response for validator
   const configValidatorResp = (new ConfigValidator()).configValidator()
@@ -39,11 +39,12 @@ export function activate() {
     vscode.window.showErrorMessage(configValidatorResp.msg)
     return
   }
-  console.log('Congratulations, your extension "gitlab-mr-notice-vscode" is now active!');
+  console.log('Congratulations, your extension "gitlab-mr-notice-vscode" is now active!')
 
   // start
+  vscode.window.setStatusBarMessage('gitlab-mr-notice-vscode 正在运行...', 1500)
   main()
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() { }
+export function deactivate () { }
