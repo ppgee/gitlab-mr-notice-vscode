@@ -8,7 +8,7 @@ import { GitLabMR } from './gitlab'
 import CONFIG from './configuration'
 
 function sleep () {
-  return new Promise ((resolve, reject) => {
+  return new Promise ((resolve) => {
     setTimeout(() => {
       resolve()
     }, CONFIG.SETTING_CONFIG.timeout * 1000)
