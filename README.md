@@ -11,6 +11,7 @@
 `ctrl/cmd + ,` 或者自设快捷键 打开 settings:
 
 * `gitMRNotice.gitlabUrl`: 使用者的gitlab域名，必设
+* `gitMRNotice.gitlabVersion`: 使用者gitlab版本，默认v4，选填，填入例如 v3
 * `gitMRNotice.privateToken`: 使用者的私有授权，必设
 * `gitMRNotice.userName`: 使用者在gitlab上的姓名，必设
 * `gitMRNotice.timeout`: 通知时间间隔，选填，默认60秒
