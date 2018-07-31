@@ -3,7 +3,7 @@
     "icon": "images/gitlab.png",
     "displayName": "gitlab-mr-notice-vscode",
     "description": "MR tips in GitLab",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "ppgee",
     "engines": {
         "vscode": "^1.25.0"
@@ -40,6 +40,11 @@
                     ],
                     "default": null,
                     "description": "gitlab域名，必填"
+                },
+                "gitMRNotice.gitlabVersion": {
+                    "type": "string",
+                    "default": "v4",
+                    "description": "gitlab版本，默认v4，选填，填入例如v3"
                 },
                 "gitMRNotice.privateToken": {
                     "type": [

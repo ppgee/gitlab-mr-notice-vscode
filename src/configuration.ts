@@ -7,7 +7,7 @@ const EXTENSION_NAME = 'gitMRNotice'
 const SETTING_CONFIG = workspace.getConfiguration(EXTENSION_NAME)
 
 // gitlab api version
-const GITLAB_API_VERSION = '/api/v3'
+const GITLAB_API_VERSION = `/api/${SETTING_CONFIG.gitlabVersion}`
 
 export default {
   EXTENSION_NAME,

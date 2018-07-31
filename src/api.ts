@@ -44,6 +44,6 @@ export class AxiosInstance {
    * @param projectId gitlab project id
    */
   getMergeRequestsById (projectId: string) {
-    return this.axiosInstance.get(`/projects/${projectId}/merge_requests`) // ?state=opened
+    return this.axiosInstance.get(`/projects/${projectId}/merge_requests?state=opened`) // ?state=opened
   }
 }
