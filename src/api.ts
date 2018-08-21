@@ -23,6 +23,30 @@ export class AxiosInstance {
         'PRIVATE-TOKEN': this.privateToken
       }
     })
+
+    this.axiosInstance.interceptors.response.use(response => {
+      return response
+    }, error => {
+      const errorDetail = this.genErrorDetailFromResponse(error)
+      
+      return Promise.reject(errorDetail)
+    })
+  }
+
+  // generates the error detail from api response
+  genErrorDetailFromResponse (error: any) {
+    const { config, response } = error
+
+    // response is not exists
+    if (!response) {
+      return `something error happened`
+    }
+    // get the baseURL and url to split api detail
+    const { baseURL, url } = config
+    const splitArray = url.replace(baseURL, '').substring(1).split('/') // api detail
+    const apiDetail = `api ${splitArray.shift() || ''} ${splitArray.shift() || ''}: ${response.data.message}`
+
+    return apiDetail
   }
 
   // get user info api
@@ -44,6 +68,6 @@ export class AxiosInstance {
    * @param projectId gitlab project id
    */
   getMergeRequestsById (projectId: string) {
-    return this.axiosInstance.get(`/projects/${projectId}/merge_requests?state=opened`) // ?state=opened
+    return this.axiosInstance.get(`/projects/${projectId}/merge_requests?state=opened`)
   }
 }
