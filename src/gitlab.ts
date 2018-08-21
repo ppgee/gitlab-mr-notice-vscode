@@ -64,7 +64,6 @@ export class GitLabMR {
       const resp = (await this.apiInstance.getMergeRequestsById(projectId)).data
       isArray(resp) && (resp.length > 0) && (addMergeRequests(resp))
     }
-    // console.log(this.mergeRequests)
   }
 
   // start
@@ -86,6 +85,12 @@ export class GitLabMR {
 
         resolve()
       } catch (error) {
+        // if the status exists
+        const { response } = error
+        // throw the response message
+        if (response) {
+          error = response.data.message
+        }
         reject(error)
       }
     })

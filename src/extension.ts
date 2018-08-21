@@ -24,7 +24,7 @@ async function main () {
       await sleep()
     }
   } catch (error) {
-    vscode.window.showErrorMessage(error)
+    vscode.window.showErrorMessage(`gitlab-mr-notice error: ${error}`)
   }
 }
 
