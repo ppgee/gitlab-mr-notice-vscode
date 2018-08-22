@@ -1,9 +1,9 @@
 {
     "name": "gitlab-mr-notice-vscode",
     "icon": "images/gitlab.png",
-    "displayName": "gitlab-mr-notice-vscode",
+    "displayName": "Gitlab-MR-Notices",
     "description": "MR tips in GitLab",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "publisher": "ppgee",
     "engines": {
         "vscode": "^1.25.0"

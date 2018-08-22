@@ -2,6 +2,7 @@ import Axios, {
   AxiosInstance as AXIOS_INSTANCE
 } from 'axios'
 import CONFIG from './configuration'
+import { genMessage } from './messager'
 
 export class AxiosInstance {
   axiosInstance: AXIOS_INSTANCE
@@ -28,8 +29,9 @@ export class AxiosInstance {
       return response
     }, error => {
       const errorDetail = this.genErrorDetailFromResponse(error)
+      const errorMessager = genMessage(false, errorDetail)
       
-      return Promise.reject(errorDetail)
+      return Promise.reject(errorMessager)
     })
   }
 
