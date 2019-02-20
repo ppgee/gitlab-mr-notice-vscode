@@ -25,7 +25,7 @@ export class ConfigValidator {
   configValidator = () => {
 
     // config validator result
-    const validResult = this.validConfig('gitlabUrl') && this.validConfig('privateToken') && this.validConfig('userName') 
+    const validResult = this.validConfig('gitlabUrl') && this.validConfig('privateToken')
 
     // validResult return true
     if (validResult === true) {

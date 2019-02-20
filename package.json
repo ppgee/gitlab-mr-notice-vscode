@@ -3,7 +3,7 @@
     "icon": "images/gitlab.png",
     "displayName": "Gitlab-MR-Notices",
     "description": "MR tips in GitLab",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "publisher": "ppgee",
     "engines": {
         "vscode": "^1.25.0"
@@ -14,7 +14,9 @@
     "keywords": [
         "gitlab",
         "merge request",
-        "MR"
+        "MR",
+        "sample",
+        "notice"
     ],
     "bugs": {
         "url": "https://github.com/ppgee/gitlab-mr-notice-vscode/issues"
@@ -53,14 +55,6 @@
                     ],
                     "default": null,
                     "description": "gitlab中个人账号的私有授权，必填"
-                },
-                "gitMRNotice.userName": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "default": null,
-                    "description": "gitlab的姓名，必填"
                 },
                 "gitMRNotice.timeout": {
                     "type": "number",

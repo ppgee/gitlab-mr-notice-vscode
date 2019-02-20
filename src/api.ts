@@ -7,15 +7,12 @@ import { genMessage } from './messager'
 export class AxiosInstance {
   axiosInstance: AXIOS_INSTANCE
   private privateToken: any
-  private userName: any
 
   constructor (
     gitlabUrl: string,
-    privateToken: string,
-    userName: string
+    privateToken: string
   ) {
     this.privateToken = privateToken
-    this.userName = userName
 
     this.axiosInstance = Axios.create({
       baseURL: `${gitlabUrl}${CONFIG.GITLAB_API_VERSION}`,
@@ -51,25 +48,15 @@ export class AxiosInstance {
     return apiDetail
   }
 
-  // get user info api
-  getCurrUserInfo () {
-    return this.axiosInstance.get('/users', {
+  /**
+   * get opened merge requests by assigned_to_me
+   */
+  getMRListAssignedToMe () {
+    return this.axiosInstance.get('/merge_requests', {
       params: {
-        search: this.userName
+        scope: 'assigned_to_me',
+        state: 'opened'
       }
     })
-  }
-
-  // get owned projects api
-  getOwnProjects () {
-    return this.axiosInstance.get('/projects')
-  }
-
-  /**
-   * get merge requests by project id
-   * @param projectId gitlab project id
-   */
-  getMergeRequestsById (projectId: string) {
-    return this.axiosInstance.get(`/projects/${projectId}/merge_requests?state=opened`)
   }
 }
