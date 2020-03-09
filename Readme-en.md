@@ -2,8 +2,6 @@
 
 This is a reminder widget for gitlab merge requests
 
-[Chinese readme](./Readme-cn.md)
-
 ## Features
 
 Configure your gitlab domain name, private license and account name in vscode.
@@ -17,6 +15,7 @@ After the configuration is successful, the tool will prompt with the number of m
 - `gitMRNotice.gitlabUrl`: User's gitlab domain name, must be set
 - `gitMRNotice.gitlabVersion`: User gitlab version, default v4, optional, fill in, for example, v3
 - `gitMRNotice.privateToken`: User's private authorization, mandatory
+- `gitMRNotice.userName`: The name of the user on gitlab, must be set
 - `gitMRNotice.timeout`: notification interval, optional, default 60 seconds
 
 Alternatively: `Preferences` -> `Settings` in the VS Code top menu
