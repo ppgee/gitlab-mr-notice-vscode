@@ -36,9 +36,11 @@ export class GitLabMR {
       try {
         await this.getMRListAssignedToMe()
         if (this.mergeRequests.length > 0) {
+          const userName = await this.apiInstance.getUsername()
           const hasMergeRequestsTxt = `你的小弟们发给你${this.mergeRequests.length}个合并请求，快去合并代码取悦他们吧！`
           const openGitLabBtnTxt = '打开gitlab'
-          const openUrl = this.mergeRequests.length === 1 ? this.mergeRequests[0].web_url : this.gitlabUrl
+          const mrListUrl = this.gitlabUrl + '/dashboard/merge_requests?assignee_username=' + userName
+          const openUrl = this.mergeRequests.length === 1 ? this.mergeRequests[0].web_url : mrListUrl
           window.showInformationMessage(hasMergeRequestsTxt, openGitLabBtnTxt).then(selected => {
             selected === openGitLabBtnTxt && commands.executeCommand('vscode.open', Uri.parse(openUrl))
           })
