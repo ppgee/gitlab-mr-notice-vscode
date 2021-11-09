@@ -48,6 +48,12 @@ export class AxiosInstance {
     return apiDetail
   }
 
+  getUsername() {
+    return this.axiosInstance.get('/user').then(res => {
+      return res.data.username
+    })
+  }
+
   /**
    * get opened merge requests by assigned_to_me
    */
