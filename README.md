@@ -29,4 +29,10 @@ Submit the [issues](https://github.com/ppgee/gitlab-mr-notice-vscode/issues) if 
 
 Fork the [repo](https://github.com/ppgee/gitlab-mr-notice-vscode) and submit pull requests.
 
+## Contributors
+
+<a href="https://github.com/ppgee/gitlab-mr-notice-vscode/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ppgee/gitlab-mr-notice-vscode" />
+</a>
+
 **Enjoy!**

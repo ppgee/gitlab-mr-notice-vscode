@@ -8,7 +8,7 @@ import { GitLabMR } from './gitlab'
 import CONFIG from './configuration'
 
 function sleep () {
-  return new Promise ((resolve) => {
+  return new Promise<void>((resolve) => {
     setTimeout(() => {
       resolve()
     }, CONFIG.SETTING_CONFIG.timeout * 1000)
@@ -23,7 +23,7 @@ async function main () {
       await gitlabMR.start()
       await sleep()
     }
-  } catch (error) {
+  } catch (error: any) {
     // if the error from request show the error and restart
     const { result, msg } = error
     if (result === false) {
