@@ -1,6 +1,6 @@
 import Axios, {
   AxiosInstance as AXIOS_INSTANCE
-} from 'axios'
+} from 
 import CONFIG from './configuration'
 import { genMessage } from './messager'
 
@@ -22,9 +22,9 @@ export class AxiosInstance {
       }
     })
 
-    this.axiosInstance.interceptors.response.use(response => {
-      return response
-    }, error => {
+    this.axiosInstance.interceptors.response.use()=> {
+      return 
+    }, error => 
       const errorDetail = this.genErrorDetailFromResponse(error)
       const errorMessager = genMessage(false, errorDetail)
       
